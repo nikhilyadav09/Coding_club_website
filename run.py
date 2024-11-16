@@ -10,7 +10,7 @@ DB_CONFIG = {
     "port": 5432,
     "database": "postgres",  # Replace with your PostgreSQL database name
     "user": "postgres",  # Replace with your PostgreSQL username
-    "password": 1234  # Replace with your PostgreSQL password
+    "password": 9301  # Replace with your PostgreSQL password
 }
 
 # Function to connect to PostgreSQL
