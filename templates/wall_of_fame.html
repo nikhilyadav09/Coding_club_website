@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Wall of Fame</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">
+            <div class="club-name">Sitare Coding Club</div>
+            <div class="university-name">Sitare University</div>
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/wall-of-fame">Wall of Fame</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Wall of Fame Header -->
+    <section class="wall-of-fame-header">
+        <h2>Wall of Fame</h2>
+    </section>
+
+    <!-- Winners Table -->
+    <section class="winner-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Winner Name</th>
+                    <th>Prize</th>
+                    <th>Event Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for winner in winners %}
+                <tr>
+                    <td>{{ winner[0] }}</td>  <!-- Assuming the rank is in the first column -->
+                    <td>{{ winner[1] }}</td>  <!-- Assuming the winner name is in the second column -->
+                    <td>{{ winner[2] }}</td>  <!-- Assuming the prize is in the third column -->
+                    <td>{{ winner[3] }}</td>  <!-- Assuming the event name is in the fourth column -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

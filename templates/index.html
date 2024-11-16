@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Sitare Coding Club</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">
+            <div class="club-name">Sitare Coding Club</div>
+            <div class="university-name">Sitare University</div>
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/wall-of-fame">Wall of Fame</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Who We Are Section -->
+    <section class="who-we-are">
+        <h2>Who We Are</h2>
+        <p>We are a community of passionate coders, pushing the boundaries of technology at Sitare University.</p>
+    </section>
+
+    <!-- Coordinators Section -->
+    <section class="coordinators">
+        <h2>Our Coordinators</h2>
+        {% for coordinator in coordinators %}
+        <div class="coordinator-card">
+            <h3>{{ coordinator[1] }}</h3>  <!-- Assuming the name is in the second column -->
+            <p>Role: {{ coordinator[2] }}</p>  <!-- Assuming the role is in the third column -->
+            <p>Skills: {{ coordinator[3] }}</p>  <!-- Assuming skills are in the fourth column -->
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Events Section -->
+    <section class="events">
+        <h2>Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td>{{ event[1] }}</td>  <!-- Assuming the name is in the second column -->
+                    <td>{{ event[2] }}</td>  <!-- Assuming the date is in the third column -->
+                    <td>{{ event[3] }}</td>  <!-- Assuming description is in the fourth column -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
